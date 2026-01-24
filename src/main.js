@@ -5,7 +5,7 @@
 import { selectFolder, readMarkdownFile, convertObsidianImages } from './fileManager.js'
 import { convertMarkdown, updateSettings, getSettings, hasValidContent, handleOverflowPagination } from './converter.js'
 import { downloadSingleImage, downloadAllImages } from './download.js'
-import { loadTemplate, getTemplateList, applyTemplate } from './templates/index.js'
+import { loadTemplate, getTemplateList, applyTemplate } from './templates.js'
 
 // 状态
 let currentSectionIndex = 0
