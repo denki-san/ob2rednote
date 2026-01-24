@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note to RED - Markdown 转小红书图片</title>
+    <meta name="description" content="将 Obsidian 笔记一键转换为小红书风格图片">
+    <link rel="stylesheet" href="/src/styles/index.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- 顶部工具栏 -->
+        <header class="toolbar">
+            <div class="toolbar-left">
+                <button id="selectFolderBtn" class="btn btn-primary">
+                    <span class="icon">📁</span>
+                    选择文件夹
+                </button>
+                <span id="folderPath" class="folder-path">未选择文件夹</span>
+            </div>
+            <div class="toolbar-right">
+                <div class="control-group">
+                    <label>模板</label>
+                    <select id="templateSelect">
+                        <option value="default">默认主题</option>
+                        <option value="elegant">优雅</option>
+                        <option value="cyber">赛博</option>
+                        <option value="forest">森林</option>
+                        <option value="ocean">海洋</option>
+                        <option value="sakura">樱花</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>页面切分规则</label>
+                    <select id="headingLevelSelect">
+                        <option value="none" selected>不分割</option>
+                        <option value="h1">一级标题 #</option>
+                        <option value="h2">二级标题 ##</option>
+                        <option value="h1,h2">一级+二级标题</option>
+                    </select>
+                </div>
+                <div class="control-group font-size-control">
+                    <label>字号</label>
+                    <button id="fontSizeDecrease" class="btn-icon">−</button>
+                    <span id="fontSizeValue">18</span>
+                    <button id="fontSizeIncrease" class="btn-icon">+</button>
+                </div>
+                <div class="control-group">
+                    <label>字体</label>
+                    <select id="fontFamilySelect">
+                        <option value="system">系统默认</option>
+                        <option value="pingfang">苹方</option>
+                        <option value="heiti">黑体</option>
+                        <option value="songti">宋体</option>
+                        <option value="kaiti">楷体</option>
+                        <option value="yuanti">圆体</option>
+                        <option value="xingkai">行楷</option>
+                        <option value="fangsong">仿宋</option>
+                        <option value="noto-serif" selected>思源宋体</option>
+                        <option value="noto-sans">思源黑体</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 左侧文件列表 -->
+            <aside class="file-list-panel">
+                <div class="panel-header">
+                    <h3>📄 Markdown 文件</h3>
+                </div>
+                <div id="fileList" class="file-list">
+                    <div class="empty-state">请先选择 Obsidian 文件夹</div>
+                </div>
+            </aside>
+
+            <!-- 右侧预览区域 -->
+            <section class="preview-panel">
+                <div class="preview-wrapper" id="previewWrapper">
+                    <div class="preview-container" id="previewContainer">
+                        <div class="empty-state">选择一个 Markdown 文件开始预览</div>
+                    </div>
+                </div>
+                <!-- 导航按钮 -->
+                <div class="nav-container" id="navContainer" style="display: none;">
+                    <button id="prevBtn" class="nav-button">←</button>
+                    <span id="pageIndicator" class="page-indicator">1/1</span>
+                    <button id="nextBtn" class="nav-button">→</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部操作栏 -->
+        <footer class="bottom-bar">
+            <div class="bottom-left">
+                <span class="tips" id="tipsText">💡 不分割模式：内容从上到下连续排版</span>
+            </div>
+            <div class="bottom-right">
+                <button id="refreshBtn" class="btn btn-secondary" disabled>
+                    🔄 刷新预览
+                </button>
+                <button id="downloadCurrentBtn" class="btn btn-secondary" disabled>
+                    下载当前页
+                </button>
+                <button id="downloadAllBtn" class="btn btn-primary" disabled>
+                    导出全部页
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

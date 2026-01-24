@@ -1,0 +1,19 @@
+{
+    "name": "ob2rednote",
+    "version": "1.0.0",
+    "description": "Markdown 转小红书图片生成器 - 本地网页版",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "html-to-image": "^1.11.13",
+        "jszip": "^3.10.1",
+        "marked": "^15.0.0"
+    },
+    "devDependencies": {
+        "vite": "^6.0.0"
+    }
+}
