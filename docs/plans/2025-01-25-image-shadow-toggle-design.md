@@ -47,23 +47,27 @@ let currentSettings = {
 ### 样式策略
 采用"默认无阴影，有阴影时添加类"的方式。
 
+### 视觉效果说明
+- **有阴影时**：保持现有逻辑不变（图片有边距和阴影）
+- **无阴影时**：图片撑满原本"图片+阴影"的区域，去掉周围的边距，让图片更大更贴近边缘
+
 ### 修改 `styles.css`
 
 ```css
-/* 默认无阴影 */
+/* 默认无阴影：图片撑满区域，无边距 */
 .red-content-section img {
     max-width: 100%;
     max-height: 400px;
     height: auto;
     border-radius: 12px;
-    margin: 2px auto 0 auto;
+    margin: 0 auto;  /* 去掉边距，只保留水平居中 */
     display: block;
-    /* 移除原有的 box-shadow */
     object-fit: contain;
 }
 
-/* 有阴影时的样式 */
+/* 有阴影时的样式：添加边距和阴影 */
 .red-content-section.with-shadow img {
+    margin: 2px auto 0 auto;  /* 恢复边距给阴影留空间 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 ```
