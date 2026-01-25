@@ -78,6 +78,15 @@ let currentSettings = {
 - 当用户选择"无阴影"时，移除所有主题中的图片阴影
 - 当用户选择"有阴影"时，使用主题自带的阴影样式（如果有），否则使用默认阴影
 
+## 额外样式调整
+
+### 段落间距优化
+- 所有主题的段落 `margin-bottom` 统一改为 `0.5em`
+- 只包含图片的段落 `margin-bottom` 设为 `0`
+
+### 容器 padding 调整
+- 所有主题的 `.red-image-preview` padding 改为 `20px 12px`（上下 20px，左右 12px）
+
 ## 修改文件清单
 
 | 文件 | 修改内容 |
@@ -85,8 +94,8 @@ let currentSettings = {
 | `index.html` | 添加图片阴影下拉框 |
 | `src/converter.js` | 添加 `imageShadow` 配置项 |
 | `src/main.js` | 监听下拉框变化，应用样式类 |
-| `src/styles.css` | 添加 `.with-shadow img` 样式 |
-| `src/templates.js` | 调整主题中的图片阴影逻辑 |
+| `src/styles.css` | 添加 `.with-shadow img` 样式，优化段落间距 |
+| `src/templates.js` | 调整主题中的图片阴影逻辑，统一段落间距和容器 padding |
 
 ## 设计总结
 

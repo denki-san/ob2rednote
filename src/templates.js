@@ -8,7 +8,7 @@ const templates = {
         id: 'default',
         name: '默认主题',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background-color: #1c1c1e; padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background-color: #1c1c1e; padding: 20px 12px;',
             header: {
                 userName: 'font-size: 16px; font-weight: 600; color: #ffffff;'
             },
@@ -20,7 +20,7 @@ const templates = {
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; letter-spacing: -0.01em; line-height: 1.5;', content: 'font-weight: 600; color: #f2f2f7;' },
                 h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 600; color: #f2f2f7;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: #f2f2f7;',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: #f2f2f7;',
             emphasis: {
                 strong: 'font-weight: 700; color: #0A84FF;',
                 em: 'font-style: normal; color: #98989d; background: rgba(152,152,157,0.1); padding: 0 4px;'
@@ -47,7 +47,7 @@ const templates = {
         id: 'elegant',
         name: '优雅',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 12px;',
             footer: {
                 container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: rgba(255,255,255,0.7); font-size: 13px; background: rgba(0,0,0,0.1);'
             },
@@ -55,7 +55,7 @@ const templates = {
                 h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #ffffff;' },
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #ffffff;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: rgba(255,255,255,0.95);',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: rgba(255,255,255,0.95);',
             emphasis: {
                 strong: 'font-weight: 700; color: #ffd700;'
             },
@@ -75,7 +75,7 @@ const templates = {
         id: 'cyber',
         name: '赛博',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%); padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%); padding: 20px 12px;',
             footer: {
                 container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: #00ff88; font-size: 13px; background: rgba(0,0,0,0.3); border-top: 1px solid #00ff8855;'
             },
@@ -83,7 +83,7 @@ const templates = {
                 h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #00ff88; text-shadow: 0 0 10px #00ff8855;' },
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #00ff88;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: #e0e0e0;',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: #e0e0e0;',
             emphasis: {
                 strong: 'font-weight: 700; color: #ff00ff; text-shadow: 0 0 5px #ff00ff55;'
             },
@@ -103,7 +103,7 @@ const templates = {
         id: 'forest',
         name: '森林',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); padding: 20px 12px;',
             footer: {
                 container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: rgba(255,255,255,0.8); font-size: 13px; background: rgba(0,0,0,0.15);'
             },
@@ -111,7 +111,7 @@ const templates = {
                 h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #ffffff;' },
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #ffffff;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: rgba(255,255,255,0.95);',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: rgba(255,255,255,0.95);',
             emphasis: { strong: 'font-weight: 700; color: #a8e063;' },
             list: { container: 'padding-left: 24px; margin-bottom: 1em; color: rgba(255,255,255,0.9);' },
             code: {
@@ -126,7 +126,7 @@ const templates = {
         id: 'ocean',
         name: '海洋',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%); padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%); padding: 20px 12px;',
             footer: {
                 container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: rgba(255,255,255,0.8); font-size: 13px; background: rgba(0,0,0,0.15);'
             },
@@ -134,7 +134,7 @@ const templates = {
                 h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #ffffff;' },
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #ffffff;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: rgba(255,255,255,0.95);',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: rgba(255,255,255,0.95);',
             emphasis: { strong: 'font-weight: 700; color: #7dd3fc;' },
             code: {
                 block: 'background: rgba(0,0,0,0.2); padding: 1em; border-radius: 12px; color: #7dd3fc; margin: 1em 0;',
@@ -148,7 +148,7 @@ const templates = {
         id: 'sakura',
         name: '樱花',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 30px 12px 14px 12px;',
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px 12px;',
             footer: {
                 container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: #8b5a5a; font-size: 13px; background: rgba(255,255,255,0.3);'
             },
@@ -156,7 +156,7 @@ const templates = {
                 h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #8b4a5a;' },
                 h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #8b5a5a;' }
             },
-            paragraph: 'line-height: 1.8; margin-bottom: 1em; color: #5a4a4a;',
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: #5a4a4a;',
             emphasis: { strong: 'font-weight: 700; color: #d4748a;' },
             code: {
                 block: 'background: rgba(255,255,255,0.5); padding: 1em; border-radius: 12px; color: #8b5a5a; margin: 1em 0;',
@@ -170,7 +170,7 @@ const templates = {
         id: 'techMinimal',
         name: '极简科技 (Consultant)',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background-color: #faf8f5; padding: 30px 12px 14px 12px; color: #111111;',
+            imagePreview: 'width: 100%; height: 100%; background-color: #faf8f5; padding: 20px 12px; color: #111111;',
             footer: {
                 container: 'display: none;'
             },
@@ -179,7 +179,7 @@ const templates = {
                 h2: { base: 'margin: 0 0 16px 0; font-size: 1.5em; line-height: 1.3;', content: 'font-weight: 700; color: #111; letter-spacing: -0.02em; border-left: 6px solid #0041C2; padding-left: 16px;' },
                 h3: { base: 'margin: 24px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-weight: 600; color: #111; border-left: 4px solid #0041C2; padding-left: 12px;' }
             },
-            paragraph: 'line-height: 1.7; margin-bottom: 1.2em; color: #333333; font-weight: 400;',
+            paragraph: 'line-height: 1.7; margin-bottom: 0.5em; color: #333333; font-weight: 400;',
             emphasis: { strong: 'font-weight: 700; color: #0041C2;' },
             list: {
                 container: 'padding-left: 24px; margin-bottom: 1em; color: #333;',
@@ -197,7 +197,7 @@ const templates = {
         id: 'deepTech',
         name: '深邃工程 (Engineer)',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background-color: #0d1117; padding: 30px 12px 14px 12px; color: #c9d1d9;',
+            imagePreview: 'width: 100%; height: 100%; background-color: #0d1117; padding: 20px 12px; color: #c9d1d9;',
             footer: {
                 container: 'display: none;'
             },
@@ -206,7 +206,7 @@ const templates = {
                 h2: { base: 'margin: 0 0 16px 0; font-size: 1.4em; line-height: 1.4;', content: 'font-family: "JetBrains Mono", "SF Mono", monospace; font-weight: 600; color: #7ee787;' },
                 h3: { base: 'margin: 24px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-family: "JetBrains Mono", "SF Mono", monospace; font-weight: 600; color: #ff7b72;' }
             },
-            paragraph: 'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.8; margin-bottom: 1em; color: #c9d1d9;',
+            paragraph: 'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.8; margin-bottom: 0.5em; color: #c9d1d9;',
             emphasis: { strong: 'font-weight: 700; color: #79c0ff;' },
             list: {
                 container: 'padding-left: 24px; margin-bottom: 1em; color: #c9d1d9;',
@@ -224,9 +224,9 @@ const templates = {
         id: 'structural',
         name: '结构主义 (Architect)',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background-color: #f7f7f7; background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px); background-size: 20px 20px; padding: 30px 12px 14px 12px; color: #2c2c2e;',
+            imagePreview: 'width: 100%; height: 100%; background-color: #f7f7f7; background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px); background-size: 20px 20px; padding: 20px 12px; color: #2c2c2e;',
             footer: {
-                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; font-size: 12px; color: #888; text-align: center; border-top: 2px solid #2c2c2e; background: #f7f7f7;'
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 12px; font-size: 12px; color: #888; text-align: center; border-top: 2px solid #2c2c2e; background: #f7f7f7;'
             },
             title: {
                 h1: { base: 'margin: 0 0 24px 0; font-size: 2em; line-height: 1.3; text-align: center;', content: 'font-family: "Songti SC", "Noto Serif SC", serif; font-weight: 900; color: #000; border-top: 3px solid #000; border-bottom: 3px solid #000; padding: 16px 0;' },
@@ -298,10 +298,17 @@ export function applyTemplate(imagePreview, template, settings) {
         }
     })
 
-    // 应用段落样式
+    // 应用段落样式（排除只包含图片的段落）
     imagePreview.querySelectorAll('p').forEach(p => {
         if (styles.paragraph) {
-            p.style.cssText = styles.paragraph
+            // 检查是否只包含图片
+            const hasOnlyImage = p.children.length === 1 && p.children[0].tagName === 'IMG'
+            if (hasOnlyImage) {
+                // 只包含图片的段落，不应用段落样式，保持 margin: 0
+                p.style.marginBottom = '0'
+            } else {
+                p.style.cssText = styles.paragraph
+            }
         }
     })
 

@@ -416,7 +416,8 @@ body {
 .red-content-section p {
     font-size: var(--content-font-size);
     line-height: 1.8;
-    margin-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 .red-content-section ul,
