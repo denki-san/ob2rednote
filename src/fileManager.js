@@ -44,6 +44,62 @@ export async function selectFolder() {
 }
 
 /**
+ * 处理传统的文件夹选择列表 (webkitdirectory)
+ * @param {FileList|File[]} files 
+ * @returns {Promise<{mdFiles: string[], folderName: string}>}
+ */
+export async function handleLegacyFolderSelection(files) {
+    // 清空之前的缓存
+    fileHandles.clear()
+    revokeImageBlobs()
+
+    let folderName = '已选择文件夹'
+
+    for (const file of files) {
+        // webkitRelativePath 包含了文件夹路径
+        const path = file.webkitRelativePath
+        if (!path) continue
+
+        // 提取根文件夹名
+        if (folderName === '已选择文件夹') {
+            folderName = path.split('/')[0]
+        }
+
+        // 去掉根路径
+        const relativePath = path.substring(path.indexOf('/') + 1)
+        if (!relativePath) continue
+
+        // 跳过隐藏目录中的文件
+        if (relativePath.split('/').some(part => part.startsWith('.'))) continue
+
+        // 存储文件引用
+        fileHandles.set(relativePath, file)
+
+        // 如果是图片，预加载为 Blob URL
+        if (isImageFile(file.name)) {
+            try {
+                const blobUrl = URL.createObjectURL(file)
+                imageBlobs.set(file.name, blobUrl)
+                imageBlobs.set(relativePath, blobUrl)
+                console.log(`✅ 加载图片 (Legacy): ${file.name} (路径: ${relativePath})`)
+            } catch (e) {
+                console.warn(`无法加载图片: ${relativePath}`, e)
+            }
+        }
+    }
+
+    // 获取所有 .md 文件
+    const mdFiles = Array.from(fileHandles.keys())
+        .filter(name => name.endsWith('.md'))
+        .sort()
+
+    return {
+        mdFiles,
+        folderName
+    }
+}
+
+/**
  * 递归扫描目录
  */
 async function scanDirectory(dirHandle, basePath) {
@@ -89,12 +145,16 @@ function isImageFile(filename) {
  * @returns {Promise<string>}
  */
 export async function readMarkdownFile(filePath) {
-    const handle = fileHandles.get(filePath)
-    if (!handle) {
+    const file = fileHandles.get(filePath)
+    if (!file) {
         throw new Error(`文件不存在: ${filePath}`)
     }
 
-    const file = await handle.getFile()
+    // 处理 FileSystemFileHandle 和 File 对象
+    if (file.getFile) {
+        const f = await file.getFile()
+        return await f.text()
+    }
     return await file.text()
 }
 

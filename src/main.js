@@ -2,7 +2,7 @@
  * Note to RED - 主入口
  * 将 Obsidian 笔记转换为小红书图片
  */
-import { selectFolder, readMarkdownFile, convertObsidianImages } from './fileManager.js'
+import { selectFolder, handleLegacyFolderSelection, readMarkdownFile, convertObsidianImages } from './fileManager.js'
 import { convertMarkdown, updateSettings, getSettings, hasValidContent, handleOverflowPagination } from './converter.js'
 import { downloadSingleImage, downloadAllImages } from './download.js'
 import { loadTemplate, getTemplateList, applyTemplate } from './templates.js'
@@ -64,6 +64,12 @@ function init() {
     fontFamilySelect.addEventListener('change', handleFontFamilyChange)
     refreshBtn.addEventListener('click', handleRefresh)
 
+    // 降级方案的选择处理
+    const folderInput = document.getElementById('folderInput')
+    if (folderInput) {
+        folderInput.addEventListener('change', handleLegacyFolderChange)
+    }
+
     // 初始化模板选项
     initTemplateOptions()
 
@@ -89,11 +95,21 @@ async function handleSelectFolder() {
         selectFolderBtn.disabled = true
         selectFolderBtn.textContent = '选择中...'
 
-        const result = await selectFolder()
-
-        if (result) {
-            folderPath.textContent = result.folderName
-            renderFileList(result.mdFiles)
+        if (window.showDirectoryPicker) {
+            // 支持现代 API
+            const result = await selectFolder()
+            if (result) {
+                folderPath.textContent = result.folderName
+                renderFileList(result.mdFiles)
+            }
+        } else {
+            // 降级方案：使用隐藏输入
+            const folderInput = document.getElementById('folderInput')
+            if (folderInput) {
+                folderInput.click()
+            } else {
+                alert('您的浏览器不支持文件夹选择功能')
+            }
         }
     } catch (err) {
         console.error('选择文件夹失败:', err)
@@ -101,6 +117,34 @@ async function handleSelectFolder() {
     } finally {
         selectFolderBtn.disabled = false
         selectFolderBtn.innerHTML = '<span class="icon">📁</span>选择文件夹'
+    }
+}
+
+/**
+ * 处理降级方案的文件夹变更
+ */
+async function handleLegacyFolderChange(event) {
+    const files = event.target.files
+    if (!files || files.length === 0) return
+
+    try {
+        selectFolderBtn.disabled = true
+        selectFolderBtn.textContent = '加载中...'
+
+        const result = await handleLegacyFolderSelection(files)
+
+        if (result) {
+            folderPath.textContent = result.folderName
+            renderFileList(result.mdFiles)
+        }
+    } catch (err) {
+        console.error('加载文件夹失败:', err)
+        alert('加载文件夹失败: ' + err.message)
+    } finally {
+        selectFolderBtn.disabled = false
+        selectFolderBtn.innerHTML = '<span class="icon">📁</span>选择文件夹'
+        // 重置 input 以便下次选择同一文件夹也能触发 change
+        event.target.value = ''
     }
 }
 
