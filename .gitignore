@@ -4,3 +4,13 @@ dist/
 *.log
 .vscode/
 .idea/
+
+# Local configuration
+.env
+.env.local
+.env.*.local
+Caddyfile
+
+# AI Agent files
+.agent/
+AGENTS.md

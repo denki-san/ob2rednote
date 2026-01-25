@@ -1,0 +1,7 @@
+yourdomain.com {
+    # 显式重定向不带斜杠的请求
+    redir /red /red/
+
+    # 代理所有以 /red/ 开头的请求
+    reverse_proxy /red/* localhost:5173
+}
