@@ -8,7 +8,8 @@ import { marked } from 'marked'
 let currentSettings = {
     headingLevel: 'none',
     fontSize: 18,
-    fontFamily: 'noto-serif'
+    fontFamily: 'noto-serif',
+    imageShadow: 'none'
 }
 
 /**

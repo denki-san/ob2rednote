@@ -354,7 +354,15 @@ export function applyTemplate(imagePreview, template, settings) {
     // 应用图片样式
     if (styles.image) {
         imagePreview.querySelectorAll('img').forEach(img => {
-            img.style.cssText = styles.image
+            // 先应用主题的图片样式
+            let imageStyle = styles.image
+            // 如果用户选择无阴影，移除样式中的 box-shadow
+            if (settings.imageShadow === 'none') {
+                imageStyle = imageStyle.replace(/box-shadow:[^;]+;?/g, '')
+                // 无阴影时去掉边距，让图片撑满
+                imageStyle = imageStyle.replace(/margin:[^;]+;?/g, 'margin: 0 auto;')
+            }
+            img.style.cssText = imageStyle
         })
     }
 

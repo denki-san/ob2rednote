@@ -31,6 +31,7 @@ const fontSizeDecrease = document.getElementById('fontSizeDecrease')
 const fontSizeIncrease = document.getElementById('fontSizeIncrease')
 const fontSizeValue = document.getElementById('fontSizeValue')
 const fontFamilySelect = document.getElementById('fontFamilySelect')
+const imageShadowSelect = document.getElementById('imageShadowSelect')
 
 // 字体映射
 const fontFamilyMap = {
@@ -62,6 +63,7 @@ function init() {
     fontSizeDecrease.addEventListener('click', () => changeFontSize(-1))
     fontSizeIncrease.addEventListener('click', () => changeFontSize(1))
     fontFamilySelect.addEventListener('change', handleFontFamilyChange)
+    imageShadowSelect.addEventListener('change', handleImageShadowChange)
     refreshBtn.addEventListener('click', handleRefresh)
 
     // 降级方案的选择处理
@@ -395,6 +397,9 @@ function reapplyFontSettings() {
     imagePreview.querySelectorAll('h1, h2, h3, p, li, td, th, blockquote').forEach(el => {
         el.style.fontFamily = fontFamily
     })
+
+    // 应用图片阴影
+    applyImageShadow(imageShadowSelect.value)
 }
 
 /**
@@ -464,6 +469,29 @@ function handleFontFamilyChange() {
             el.style.fontFamily = fontFamily
         })
     }
+}
+
+/**
+ * 修改图片阴影
+ */
+function handleImageShadowChange() {
+    const shadowValue = imageShadowSelect.value
+    updateSettings({ imageShadow: shadowValue })
+    applyImageShadow(shadowValue)
+}
+
+/**
+ * 应用图片阴影设置
+ */
+function applyImageShadow(shadowValue) {
+    const sections = previewContainer.querySelectorAll('.red-content-section')
+    sections.forEach(section => {
+        if (shadowValue === 'shadow') {
+            section.classList.add('with-shadow')
+        } else {
+            section.classList.remove('with-shadow')
+        }
+    })
 }
 
 /**

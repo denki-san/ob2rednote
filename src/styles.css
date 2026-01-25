@@ -437,12 +437,18 @@ body {
     /* 限制最大高度，防止图片过大 */
     height: auto;
     border-radius: 12px;
-    margin: 2px auto 0 auto;
-    /* 固定 2px 顶部间距 */
+    margin: 0 auto;
+    /* 默认无边距，图片撑满区域 */
     display: block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    /* 添加阴影 */
+    /* 默认无阴影 */
     object-fit: contain;
+}
+
+/* 有阴影时的样式 */
+.red-content-section.with-shadow img {
+    margin: 2px auto 0 auto;
+    /* 有阴影时添加边距 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* 只包含图片的段落：移除段落的 margin，让图片自己的 margin 生效 */
