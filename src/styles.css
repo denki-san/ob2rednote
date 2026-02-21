@@ -572,8 +572,111 @@ body {
 }
 /* 背景图案 - 结构主义主题 */
 .bg-grid-pattern {
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
+}
+
+/* Callout/Admonition 样式 */
+.red-content-section .red-callout {
+    margin: 1em 0;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.red-callout-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.red-callout-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.red-callout-title {
+    flex: 1;
+}
+
+.red-callout-body {
+    padding: 0 14px 12px 14px;
+    line-height: 1.7;
+}
+
+.red-callout-body p {
+    margin: 0.5em 0;
+}
+
+.red-callout-body p:first-child {
+    margin-top: 0;
+}
+
+.red-callout-body p:last-child {
+    margin-bottom: 0;
+}
+
+.red-callout-body ul,
+.red-callout-body ol {
+    margin: 0.5em 0;
+    padding-left: 20px;
+}
+
+/* NOTE - 蓝色 */
+.red-callout-note {
+    background: rgba(30, 58, 95, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.red-callout-note .red-callout-header {
+    color: #3b82f6;
+}
+
+/* TIP - 绿色 */
+.red-callout-tip {
+    background: rgba(26, 61, 46, 0.4);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.red-callout-tip .red-callout-header {
+    color: #22c55e;
+}
+
+/* IMPORTANT - 紫色 */
+.red-callout-important {
+    background: rgba(61, 31, 92, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.red-callout-important .red-callout-header {
+    color: #a855f7;
+}
+
+/* WARNING - 橙色 */
+.red-callout-warning {
+    background: rgba(92, 61, 30, 0.4);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.red-callout-warning .red-callout-header {
+    color: #f59e0b;
+}
+
+/* CAUTION - 红色 */
+.red-callout-caution {
+    background: rgba(92, 26, 26, 0.4);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.red-callout-caution .red-callout-header {
+    color: #ef4444;
+}
+
+/* INFO - 青色 */
+.red-callout-info {
+    background: rgba(22, 78, 99, 0.4);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+.red-callout-info .red-callout-header {
+    color: #06b6d4;
 }

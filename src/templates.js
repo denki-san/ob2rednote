@@ -40,6 +40,14 @@ const templates = {
                 container: 'width: 100%; margin: 1em 0; border-collapse: collapse; border-radius: 8px; overflow: hidden;',
                 header: 'background: #2c2c2e; font-weight: 600; color: #f2f2f7; padding: 10px;',
                 cell: 'padding: 10px; color: #d1d1d6; border-top: 1px solid #2c2c2e;'
+            },
+            callouts: {
+                'NOTE': { bg: 'rgba(30, 58, 95, 0.4)', border: 'rgba(59, 130, 246, 0.3)', color: '#3b82f6' },
+                'TIP': { bg: 'rgba(26, 61, 46, 0.4)', border: 'rgba(34, 197, 94, 0.3)', color: '#22c55e' },
+                'IMPORTANT': { bg: 'rgba(61, 31, 92, 0.4)', border: 'rgba(168, 85, 247, 0.3)', color: '#a855f7' },
+                'WARNING': { bg: 'rgba(92, 61, 30, 0.4)', border: 'rgba(245, 158, 11, 0.3)', color: '#f59e0b' },
+                'CAUTION': { bg: 'rgba(92, 26, 26, 0.4)', border: 'rgba(239, 68, 68, 0.3)', color: '#ef4444' },
+                'INFO': { bg: 'rgba(22, 78, 99, 0.4)', border: 'rgba(6, 182, 212, 0.3)', color: '#06b6d4' }
             }
         }
     },
@@ -68,7 +76,15 @@ const templates = {
                 inline: 'background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px; color: #ffd700;'
             },
             quote: 'border-left: 3px solid #ffd700; padding-left: 16px; margin: 1em 0; color: rgba(255,255,255,0.9);',
-            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.2);'
+            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.2);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' },
+                'TIP': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' },
+                'IMPORTANT': { bg: 'rgba(255, 255, 255, 0.15)', border: 'rgba(255, 215, 0, 0.3)', color: '#ffd700' },
+                'WARNING': { bg: 'rgba(255, 255, 255, 0.15)', border: 'rgba(255, 165, 0, 0.3)', color: '#ffd700' },
+                'CAUTION': { bg: 'rgba(255, 0, 0, 0.1)', border: 'rgba(255, 0, 0, 0.2)', color: '#ffcccb' },
+                'INFO': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' }
+            }
         }
     },
     cyber: {
@@ -96,7 +112,15 @@ const templates = {
                 inline: 'background: rgba(0,255,136,0.1); padding: 2px 6px; border-radius: 4px; color: #00ff88;'
             },
             quote: 'border-left: 3px solid #ff00ff; padding-left: 16px; margin: 1em 0; color: #e0e0e0;',
-            image: 'max-width: 100%; border-radius: 8px; margin: 2px auto 0 auto; display: block; border: 1px solid #00ff8833;'
+            image: 'max-width: 100%; border-radius: 8px; margin: 2px auto 0 auto; display: block; border: 1px solid #00ff8833;',
+            callouts: {
+                'NOTE': { bg: 'rgba(0, 0, 50, 0.6)', border: '#00f', color: '#00f' },
+                'TIP': { bg: 'rgba(0, 50, 0, 0.6)', border: '#00ff88', color: '#00ff88' },
+                'IMPORTANT': { bg: 'rgba(50, 0, 50, 0.6)', border: '#ff00ff', color: '#ff00ff' },
+                'WARNING': { bg: 'rgba(50, 50, 0, 0.6)', border: '#ffff00', color: '#ffff00' },
+                'CAUTION': { bg: 'rgba(50, 0, 0, 0.6)', border: '#ff0000', color: '#ff0000' },
+                'INFO': { bg: 'rgba(0, 50, 50, 0.6)', border: '#00ffff', color: '#00ffff' }
+            }
         }
     },
     forest: {
@@ -163,7 +187,15 @@ const templates = {
                 inline: 'background: rgba(255,255,255,0.5); padding: 2px 6px; border-radius: 4px; color: #d4748a;'
             },
             quote: 'border-left: 3px solid #d4748a; padding-left: 16px; margin: 1em 0; color: #5a4a4a;',
-            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.1);'
+            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.1);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' },
+                'TIP': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' },
+                'IMPORTANT': { bg: 'rgba(255, 255, 255, 0.5)', border: '#c084fc', color: '#c084fc' },
+                'WARNING': { bg: 'rgba(255, 255, 255, 0.5)', border: '#fcd34d', color: '#fcd34d' },
+                'CAUTION': { bg: 'rgba(255, 200, 200, 0.4)', border: '#f87171', color: '#f87171' },
+                'INFO': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' }
+            }
         }
     },
     techMinimal: {
@@ -190,7 +222,15 @@ const templates = {
                 inline: 'background: #f4f4f5; padding: 2px 6px; border-radius: 2px; color: #0041C2; font-weight: 500;'
             },
             quote: 'border-left: 4px solid #000; padding-left: 20px; margin: 1.5em 0; font-style: italic; color: #555;',
-            image: 'max-width: 100%; border-radius: 12px; margin: 1em auto; display: block; border: 1px solid #eee;'
+            image: 'max-width: 100%; border-radius: 12px; margin: 1em auto; display: block; border: 1px solid #eee;',
+            callouts: {
+                'NOTE': { bg: '#f0f4ff', border: '#0041C2', color: '#0041C2' },
+                'TIP': { bg: '#f0fff4', border: '#22c55e', color: '#22c55e' },
+                'IMPORTANT': { bg: '#fdf4ff', border: '#a855f7', color: '#a855f7' },
+                'WARNING': { bg: '#fff0e6', border: '#f59e0b', color: '#f59e0b' },
+                'CAUTION': { bg: '#fff0f0', border: '#ef4444', color: '#ef4444' },
+                'INFO': { bg: '#f0f4ff', border: '#0041C2', color: '#0041C2' }
+            }
         }
     },
     deepTech: {
@@ -217,7 +257,15 @@ const templates = {
                 inline: 'background: rgba(110,118,129,0.4); padding: 2px 6px; border-radius: 4px; color: #ff7b72; font-family: "JetBrains Mono", monospace;'
             },
             quote: 'border-left: 3px solid #30363d; padding-left: 16px; margin: 1em 0; color: #8b949e;',
-            image: 'max-width: 100%; border-radius: 6px; margin: 1em auto; display: block; border: 1px solid #30363d;'
+            image: 'max-width: 100%; border-radius: 6px; margin: 1em auto; display: block; border: 1px solid #30363d;',
+            callouts: {
+                'NOTE': { bg: 'rgba(56, 139, 253, 0.15)', border: 'rgba(56, 139, 253, 0.4)', color: '#58a6ff' },
+                'TIP': { bg: 'rgba(46, 160, 67, 0.15)', border: 'rgba(46, 160, 67, 0.4)', color: '#3fb950' },
+                'IMPORTANT': { bg: 'rgba(163, 113, 247, 0.15)', border: 'rgba(163, 113, 247, 0.4)', color: '#d2a8ff' },
+                'WARNING': { bg: 'rgba(187, 128, 9, 0.15)', border: 'rgba(187, 128, 9, 0.4)', color: '#d29922' },
+                'CAUTION': { bg: 'rgba(248, 81, 73, 0.15)', border: 'rgba(248, 81, 73, 0.4)', color: '#f85149' },
+                'INFO': { bg: 'rgba(56, 139, 253, 0.15)', border: 'rgba(56, 139, 253, 0.4)', color: '#58a6ff' }
+            }
         }
     },
     structural: {
@@ -244,7 +292,15 @@ const templates = {
                 inline: 'background: #eee; padding: 2px 6px; border-radius: 0; color: #000; border: 1px solid #ccc;'
             },
             quote: 'border-left: 4px solid #000; background: #fff; padding: 16px; margin: 1.5em 0; font-family: "Songti SC", serif; color: #000; border: 1px solid #000;',
-            image: 'max-width: 100%; border-radius: 0; margin: 1em auto; display: block; border: none; padding: 0; background: transparent;'
+            image: 'max-width: 100%; border-radius: 0; margin: 1em auto; display: block; border: none; padding: 0; background: transparent;',
+            callouts: {
+                'NOTE': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'TIP': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'IMPORTANT': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'WARNING': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'CAUTION': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'INFO': { bg: '#ffffff', border: '#000000', color: '#000000' }
+            }
         }
     }
 }
@@ -370,6 +426,26 @@ export function applyTemplate(imagePreview, template, settings) {
                 imageStyle = imageStyle.replace(/margin:[^;]+;?/g, 'margin: 0 auto;')
             }
             img.style.cssText = imageStyle
+        })
+    }
+
+    // 应用 Callout 样式
+    if (styles.callouts) {
+        imagePreview.querySelectorAll('.red-callout').forEach(callout => {
+            const type = callout.dataset.type
+            const calloutStyle = styles.callouts[type] || styles.callouts['NOTE'] // 默认降级到 NOTE
+
+            if (calloutStyle) {
+                // 应用背景色和边框
+                callout.style.backgroundColor = calloutStyle.bg
+                callout.style.border = `1px solid ${calloutStyle.border || calloutStyle.color}`
+
+                // 应用标题/图标颜色
+                const header = callout.querySelector('.red-callout-header')
+                if (header) {
+                    header.style.color = calloutStyle.color
+                }
+            }
         })
     }
 

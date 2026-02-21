@@ -12,6 +12,138 @@ let currentSettings = {
     imageShadow: 'none'
 }
 
+// Callout 类型配置
+const CALLOUT_TYPES = {
+    'NOTE': { icon: '📝', color: '#3b82f6', bgColor: '#1e3a5f' },
+    'TIP': { icon: '💡', color: '#22c55e', bgColor: '#1a3d2e' },
+    'IMPORTANT': { icon: '❗', color: '#a855f7', bgColor: '#3d1f5c' },
+    'WARNING': { icon: '⚠️', color: '#f59e0b', bgColor: '#5c3d1e' },
+    'CAUTION': { icon: '🔥', color: '#ef4444', bgColor: '#5c1a1a' },
+    'INFO': { icon: 'ℹ️', color: '#06b6d4', bgColor: '#164e63' }
+}
+
+/**
+ * 预处理 callout 语法
+ * 将 `> [!TYPE]` 转换为特殊的 HTML 结构
+ */
+function preprocessCallouts(markdown) {
+    // 匹配 callout 块：> [!TYPE] 开头，后续行以 > 开头
+    // 使用 (?:^>.*(?:\n|$))* 捕获所有后续行，包括文件末尾可能没有换行符的情况
+    const calloutRegex = /^>\s*\[!\s*(NOTE|TIP|IMPORTANT|WARNING|CAUTION|INFO)\s*\]\s*(.*)$\n((?:^>.*(?:\n|$))*)/gm
+
+    return markdown.replace(calloutRegex, (match, type, title, contentBlock) => {
+        const config = CALLOUT_TYPES[type]
+        if (!config) return match // 不支持的类型，保持原样
+
+        // 解析内容：移除每行开头的 "> "
+        const content = contentBlock
+            .split('\n')
+            .map(line => line.replace(/^>\s?/, ''))
+            .join('\n')
+
+        // 使用标题或类型名称
+        const displayTitle = title.trim() || type
+
+        // 返回自定义的 HTML 标记，后续会转换为真实结构
+        return `<!-- CALLOUT_START:${type}:${displayTitle} -->\n${content}\n<!-- CALLOUT_END -->`
+    })
+}
+
+/**
+ * 将 callout 标记转换为实际的 HTML 结构
+ */
+function convertCalloutsToHtml(container) {
+    const callouts = []
+
+    // 查找所有 callout 标记
+    const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_COMMENT,
+        {
+            acceptNode: (node) => {
+                if (node.nodeValue?.startsWith('CALLOUT_START:')) {
+                    return NodeFilter.FILTER_ACCEPT
+                }
+                return NodeFilter.FILTER_REJECT
+            }
+        }
+    )
+
+    let commentNode
+    while (commentNode = walker.nextNode()) {
+        const match = commentNode.nodeValue.match(/CALLOUT_START:(\w+):(.+)/)
+        if (match) {
+            const [, type, title] = match
+            callouts.push({ type, title, startNode: commentNode })
+        }
+    }
+
+    // 处理每个 callout
+    callouts.forEach(({ type, title, startNode }) => {
+        const config = CALLOUT_TYPES[type]
+        if (!config) return
+
+        // 收集内容直到结束标记
+        const content = []
+        let currentNode = startNode.nextSibling
+
+        while (currentNode) {
+            if (currentNode.nodeType === Node.COMMENT_NODE &&
+                currentNode.nodeValue === 'CALLOUT_END') {
+                break
+            }
+            content.push(currentNode.cloneNode(true))
+            currentNode = currentNode.nextSibling
+        }
+
+        // 创建 callout 容器
+        const calloutDiv = document.createElement('div')
+        calloutDiv.className = `red-callout red-callout-${type.toLowerCase()}`
+        calloutDiv.dataset.type = type
+
+        // 创建标题行
+        const header = document.createElement('div')
+        header.className = 'red-callout-header'
+
+        const icon = document.createElement('span')
+        icon.className = 'red-callout-icon'
+        icon.textContent = config.icon
+
+        const titleEl = document.createElement('span')
+        titleEl.className = 'red-callout-title'
+        titleEl.textContent = title
+
+        header.appendChild(icon)
+        header.appendChild(titleEl)
+
+        // 创建内容区域
+        const body = document.createElement('div')
+        body.className = 'red-callout-body'
+        content.forEach(node => body.appendChild(node))
+
+        calloutDiv.appendChild(header)
+        calloutDiv.appendChild(body)
+
+        // 替换原始内容
+        const insertBefore = startNode.nextSibling
+        let nodeToRemove = startNode
+
+        // 移除从开始标记到结束标记的所有节点
+        while (nodeToRemove) {
+            const next = nodeToRemove.nextSibling
+            if (nodeToRemove.nodeType === Node.COMMENT_NODE &&
+                nodeToRemove.nodeValue === 'CALLOUT_END') {
+                nodeToRemove.remove()
+                break
+            }
+            nodeToRemove.remove()
+            nodeToRemove = next
+        }
+
+        container.insertBefore(calloutDiv, insertBefore)
+    })
+}
+
 /**
  * 更新设置
  */
@@ -91,6 +223,9 @@ function convertWithoutSplit(tempContainer) {
  * @returns {{html: string, sections: number, needsOverflowCheck: boolean}}
  */
 export function convertMarkdown(markdown) {
+    // 预处理 callout 语法
+    const preprocessedMarkdown = preprocessCallouts(markdown)
+
     // 配置 marked 选项
     marked.use({
         breaks: true, // 回车换行
@@ -99,7 +234,7 @@ export function convertMarkdown(markdown) {
 
     // 预处理 Markdown：保留空行
     // 将连续的空行替换为 <br> 标签，以便在 HTML 中显示为空白占位
-    const processedMarkdown = markdown.replace(/\n{2,}/g, (match) => {
+    const processedMarkdown = preprocessedMarkdown.replace(/\n{2,}/g, (match) => {
         const count = match.length
         // 保留两个换行符作为段落分隔，其余的转换为 <br>
         if (count > 2) {
@@ -114,6 +249,9 @@ export function convertMarkdown(markdown) {
     // 创建临时容器来解析 HTML
     const tempContainer = document.createElement('div')
     tempContainer.innerHTML = rawHtml
+
+    // 转换 callout 标记为 HTML 结构
+    convertCalloutsToHtml(tempContainer)
 
     // 不分割模式：所有内容放入单个 section
     if (currentSettings.headingLevel === 'none') {
