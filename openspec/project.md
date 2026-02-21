@@ -30,7 +30,7 @@ ob2rednote 是一个 Markdown 转小红书图片生成器。它旨在将本地 O
   - `templates.js`: 预设的主题模板。
 
 ### Testing Strategy
-- 目前项目中包含 `test-mixed-paragraph.js`，主要通过手动预览和基础逻辑脚本进行验证。
+- 目前项目中包含 `tests/test_mixed_paragraph.js`，主要通过手动预览和基础逻辑脚本进行验证。
 
 ### Git Workflow
 - 遵循基础的 Git 版本管理实践。
