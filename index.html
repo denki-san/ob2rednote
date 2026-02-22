@@ -6,86 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note to RED - Markdown 转小红书图片</title>
     <meta name="description" content="将 Obsidian 笔记一键转换为小红书风格图片">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alibaba+PuHuiTi:wght@400;700&family=Liu+Jian+Mao+Cao&family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;900&family=Smiley+Sans:wght@400&family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap"
+        rel="stylesheet">
+    <!-- 引入霞鹜文楷 CDN -->
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print"
+        onload="this.media='all'">
     <link rel="stylesheet" href="/src/styles.css">
 </head>
 
 <body>
+    <!-- 极简顶部 Header -->
+    <header class="app-header">
+        <div class="logo">Note to RED</div>
+    </header>
+
     <div class="app-container">
-        <!-- 顶部工具栏 -->
-        <header class="toolbar">
-            <div class="toolbar-left">
-                <button id="selectFolderBtn" class="btn btn-primary">
+        <!-- 左侧：文件管理栏 -->
+        <aside class="left-sidebar">
+            <div class="sidebar-header">
+                <button id="selectFolderBtn" class="btn btn-primary btn-block">
                     <span class="icon">📁</span>
                     选择文件夹
                 </button>
-                <span id="folderPath" class="folder-path">未选择文件夹</span>
+                <div id="folderPath" class="folder-path" title="未选择文件夹">未选择文件夹</div>
                 <input type="file" id="folderInput" webkitdirectory directory style="display: none;">
             </div>
-            <div class="toolbar-right">
-                <div class="control-group">
-                    <label>模板</label>
-                    <select id="templateSelect">
-                        <option value="default">默认主题</option>
-                        <option value="elegant">优雅</option>
-                        <option value="cyber">赛博</option>
-                        <option value="forest">森林</option>
-                        <option value="ocean">海洋</option>
-                        <option value="sakura">樱花</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label>页面切分规则</label>
-                    <select id="headingLevelSelect">
-                        <option value="none" selected>不分割</option>
-                        <option value="h1">一级标题 #</option>
-                        <option value="h2">二级标题 ##</option>
-                        <option value="h1,h2">一级+二级标题</option>
-                    </select>
-                </div>
-                <div class="control-group font-size-control">
-                    <label>字号</label>
-                    <button id="fontSizeDecrease" class="btn-icon">−</button>
-                    <span id="fontSizeValue">18</span>
-                    <button id="fontSizeIncrease" class="btn-icon">+</button>
-                </div>
-                <div class="control-group">
-                    <label>字体</label>
-                    <select id="fontFamilySelect">
-                        <option value="system">系统默认</option>
-                        <option value="pingfang">苹方</option>
-                        <option value="heiti">黑体</option>
-                        <option value="songti">宋体</option>
-                        <option value="kaiti">楷体</option>
-                        <option value="yuanti">圆体</option>
-                        <option value="xingkai">行楷</option>
-                        <option value="fangsong">仿宋</option>
-                        <option value="noto-serif" selected>思源宋体</option>
-                        <option value="noto-sans">思源黑体</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label>图片阴影</label>
-                    <select id="imageShadowSelect">
-                        <option value="none" selected>无阴影</option>
-                        <option value="shadow">有阴影</option>
-                    </select>
-                </div>
+
+            <div class="panel-header">
+                <h3>📄 Markdown 文件</h3>
             </div>
-        </header>
+            <div id="fileList" class="file-list">
+                <div class="empty-state">请先选择 Obsidian 文件夹</div>
+            </div>
+        </aside>
 
-        <!-- 主内容区域 -->
-        <main class="main-content">
-            <!-- 左侧文件列表 -->
-            <aside class="file-list-panel">
-                <div class="panel-header">
-                    <h3>📄 Markdown 文件</h3>
-                </div>
-                <div id="fileList" class="file-list">
-                    <div class="empty-state">请先选择 Obsidian 文件夹</div>
-                </div>
-            </aside>
-
-            <!-- 右侧预览区域 -->
+        <!-- 中间：主预览区 -->
+        <main class="center-content">
             <section class="preview-panel">
                 <div class="preview-wrapper" id="previewWrapper">
                     <div class="preview-container" id="previewContainer">
@@ -101,23 +60,89 @@
             </section>
         </main>
 
-        <!-- 底部操作栏 -->
-        <footer class="bottom-bar">
-            <div class="bottom-left">
-                <span class="tips" id="tipsText">💡 不分割模式：内容从上到下连续排版</span>
+        <!-- 右侧：设置栏 -->
+        <aside class="right-sidebar">
+            <div class="sidebar-header">
+                <h3>⚙️ 样式设置</h3>
             </div>
-            <div class="bottom-right">
-                <button id="refreshBtn" class="btn btn-secondary" disabled>
+            <div class="controls-container">
+                <div class="control-group-vertical">
+                    <label>模板</label>
+                    <select id="templateSelect" class="form-select">
+                        <option value="default">默认主题</option>
+                        <option value="cyber">赛博</option>
+                        <option value="forest">森林</option>
+                        <option value="ocean">海洋</option>
+                        <option value="cream">奶油治愈</option>
+                        <option value="brutalist">极简粗野</option>
+                        <option value="vintage">复古胶片</option>
+                        <option value="wabisabi">侘寂素雅</option>
+                        <option value="y2k">Y2K千禧</option>
+                        <option value="editorial">杂志大片</option>
+                        <option value="journal">手账日记</option>
+                        <option value="glass">毛玻璃</option>
+                    </select>
+                </div>
+
+                <div class="control-group-vertical">
+                    <label>页面切分规则</label>
+                    <select id="headingLevelSelect" class="form-select">
+                        <option value="none" selected>不分割</option>
+                        <option value="h1">一级标题 #</option>
+                        <option value="h2">二级标题 ##</option>
+                        <option value="h1,h2">一级+二级标题</option>
+                    </select>
+                    <span class="tips-micro" id="tipsText">💡 不分割模式：内容从上到下连续排版</span>
+                </div>
+
+                <div class="control-group-vertical font-size-control">
+                    <label>字号设置</label>
+                    <div class="font-size-stepper">
+                        <button id="fontSizeDecrease" class="btn-icon">−</button>
+                        <span id="fontSizeValue">18</span>
+                        <button id="fontSizeIncrease" class="btn-icon">+</button>
+                    </div>
+                </div>
+
+                <div class="control-group-vertical">
+                    <label>内容字体</label>
+                    <select id="fontFamilySelect" class="form-select">
+                        <option value="system">系统默认</option>
+                        <option value="noto-serif" selected>思源宋体</option>
+                        <option value="noto-sans">思源黑体</option>
+                        <option value="lxgw">霞鹜文楷</option>
+                        <option value="smiley">得意黑</option>
+                        <option value="puhui">阿里普惠体</option>
+                        <option value="kuaile">站酷快乐体</option>
+                        <option value="xiaowei">站酷小薇体</option>
+                        <option value="huangyou">站酷庆科黄油体</option>
+                        <option value="mashan">马善政毛笔楷书</option>
+                        <option value="zhimang">钟齐志莽行书</option>
+                        <option value="longcang">龙藏体</option>
+                        <option value="liujian">刘建毛草</option>
+                        <option value="pingfang">苹方</option>
+                    </select>
+                </div>
+
+                <div class="control-group-vertical">
+                    <label>图片边框与阴影</label>
+                    <select id="imageShadowSelect" class="form-select">
+                        <option value="none" selected>无阴影</option>
+                        <option value="shadow">有阴影</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions-container">
+                <button id="refreshBtn" class="btn btn-secondary btn-block" disabled>
                     🔄 刷新预览
                 </button>
-                <button id="downloadCurrentBtn" class="btn btn-secondary" disabled>
-                    下载当前页
-                </button>
-                <button id="downloadAllBtn" class="btn btn-primary" disabled>
-                    导出全部页
-                </button>
+                <div class="action-row">
+                    <button id="downloadCurrentBtn" class="btn btn-secondary" disabled>下载当前页</button>
+                    <button id="downloadAllBtn" class="btn btn-primary" disabled>导出全部页</button>
+                </div>
             </div>
-        </footer>
+        </aside>
     </div>
 
     <script type="module" src="/src/main.js"></script>

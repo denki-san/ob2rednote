@@ -44,7 +44,17 @@ const fontFamilyMap = {
     xingkai: '"Xingkai SC", "STXingkai", cursive',
     fangsong: 'STFangsong, FangSong, serif',
     'noto-serif': '"Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif SC", serif',
-    'noto-sans': '"Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif'
+    'noto-sans': '"Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif',
+    lxgw: '"LXGW WenKai Screen", "LXGW WenKai", sans-serif',
+    smiley: '"Smiley Sans", sans-serif',
+    puhui: '"Alibaba PuHuiTi", sans-serif',
+    kuaile: '"ZCOOL KuaiLe", sans-serif',
+    xiaowei: '"ZCOOL XiaoWei", serif',
+    huangyou: '"ZCOOL QingKe HuangYou", sans-serif',
+    mashan: '"Ma Shan Zheng", cursive',
+    zhimang: '"Zhi Mang Xing", cursive',
+    longcang: '"Long Cang", cursive',
+    liujian: '"Liu Jian Mao Cao", cursive'
 }
 
 /**

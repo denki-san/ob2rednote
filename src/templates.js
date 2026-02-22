@@ -51,42 +51,6 @@ const templates = {
             }
         }
     },
-    elegant: {
-        id: 'elegant',
-        name: '优雅',
-        styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 12px;',
-            footer: {
-                container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: rgba(255,255,255,0.7); font-size: 13px; background: rgba(0,0,0,0.1);'
-            },
-            title: {
-                h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #ffffff;' },
-                h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #ffffff;' }
-            },
-            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: rgba(255,255,255,0.95);',
-            emphasis: {
-                strong: 'font-weight: 700; color: #ffd700;'
-            },
-            list: {
-                container: 'padding-left: 24px; margin-bottom: 1em; color: rgba(255,255,255,0.9);',
-                item: 'margin-bottom: 0.6em; line-height: 1.75;'
-            },
-            code: {
-                block: 'background: rgba(0,0,0,0.2); padding: 1em; border-radius: 12px; color: #ffffff; margin: 1em 0;',
-                inline: 'background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px; color: #ffd700;'
-            },
-            quote: 'border-left: 3px solid #ffd700; padding-left: 16px; margin: 1em 0; color: rgba(255,255,255,0.9);',
-            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.2);',
-            callouts: {
-                'NOTE': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' },
-                'TIP': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' },
-                'IMPORTANT': { bg: 'rgba(255, 255, 255, 0.15)', border: 'rgba(255, 215, 0, 0.3)', color: '#ffd700' },
-                'WARNING': { bg: 'rgba(255, 255, 255, 0.15)', border: 'rgba(255, 165, 0, 0.3)', color: '#ffd700' },
-                'CAUTION': { bg: 'rgba(255, 0, 0, 0.1)', border: 'rgba(255, 0, 0, 0.2)', color: '#ffcccb' },
-                'INFO': { bg: 'rgba(255, 255, 255, 0.1)', border: 'rgba(255, 255, 255, 0.2)', color: '#ffffff' }
-            }
-        }
-    },
     cyber: {
         id: 'cyber',
         name: '赛博',
@@ -168,36 +132,6 @@ const templates = {
             image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block;'
         }
     },
-    sakura: {
-        id: 'sakura',
-        name: '樱花',
-        styles: {
-            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px 12px;',
-            footer: {
-                container: 'position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: #8b5a5a; font-size: 13px; background: rgba(255,255,255,0.3);'
-            },
-            title: {
-                h1: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.4;', content: 'font-weight: 700; color: #8b4a5a;' },
-                h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #8b5a5a;' }
-            },
-            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: #5a4a4a;',
-            emphasis: { strong: 'font-weight: 700; color: #d4748a;' },
-            code: {
-                block: 'background: rgba(255,255,255,0.5); padding: 1em; border-radius: 12px; color: #8b5a5a; margin: 1em 0;',
-                inline: 'background: rgba(255,255,255,0.5); padding: 2px 6px; border-radius: 4px; color: #d4748a;'
-            },
-            quote: 'border-left: 3px solid #d4748a; padding-left: 16px; margin: 1em 0; color: #5a4a4a;',
-            image: 'max-width: 100%; border-radius: 12px; margin: 2px auto 0 auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.1);',
-            callouts: {
-                'NOTE': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' },
-                'TIP': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' },
-                'IMPORTANT': { bg: 'rgba(255, 255, 255, 0.5)', border: '#c084fc', color: '#c084fc' },
-                'WARNING': { bg: 'rgba(255, 255, 255, 0.5)', border: '#fcd34d', color: '#fcd34d' },
-                'CAUTION': { bg: 'rgba(255, 200, 200, 0.4)', border: '#f87171', color: '#f87171' },
-                'INFO': { bg: 'rgba(255, 255, 255, 0.4)', border: '#d4748a', color: '#d4748a' }
-            }
-        }
-    },
     techMinimal: {
         id: 'techMinimal',
         name: '极简科技 (Consultant)',
@@ -268,41 +202,288 @@ const templates = {
             }
         }
     },
-    structural: {
-        id: 'structural',
-        name: '结构主义 (Architect)',
+
+    cream: {
+        id: 'cream',
+        name: '奶油治愈',
         styles: {
-            imagePreview: 'width: 100%; height: 100%; background-color: #f7f7f7; background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px); background-size: 20px 20px; padding: 20px 12px; color: #2c2c2e;',
+            imagePreview: 'width: 100%; height: 100%; background-color: #faf7f2; padding: 20px 12px; color: #5a504a;',
             footer: {
-                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 12px; font-size: 12px; color: #888; text-align: center; border-top: 2px solid #2c2c2e; background: #f7f7f7;'
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 13px; color: #a89f91; text-align: center; background: linear-gradient(to top, rgba(250,247,242,1), rgba(250,247,242,0));'
             },
             title: {
-                h1: { base: 'margin: 0 0 24px 0; font-size: 2em; line-height: 1.3; text-align: center;', content: 'font-family: "Songti SC", "Noto Serif SC", serif; font-weight: 900; color: #000; border-top: 3px solid #000; border-bottom: 3px solid #000; padding: 16px 0;' },
-                h2: { base: 'margin: 0 0 16px 0; font-size: 1.4em; line-height: 1.4;', content: 'font-family: "Songti SC", "Noto Serif SC", serif; font-weight: 700; color: #000; border-bottom: 1px solid #999; display: inline-block; padding-bottom: 4px;' },
-                h3: { base: 'margin: 24px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-family: "Songti SC", serif; font-weight: 700; color: #333;' }
+                h1: { base: 'margin: 0 0 20px 0; font-size: 1.6em; line-height: 1.4; text-align: center;', content: 'font-weight: 700; color: #4a3f35;' },
+                h2: { base: 'margin: 0 0 14px 0; font-size: 1.4em; line-height: 1.5; text-align: center;', content: 'font-weight: 600; color: #5a504a;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 600; color: #6a605a;' }
             },
-            paragraph: 'font-family: "Songti SC", "Noto Serif SC", serif; line-height: 1.7; margin-bottom: 0.5em; color: #333; text-align: justify;',
-            emphasis: { strong: 'font-weight: 800; color: #000; text-decoration: underline; text-decoration-color: #000;' },
+            paragraph: 'line-height: 1.8; margin-bottom: 0.5em; color: #5a504a;',
+            emphasis: { strong: 'font-weight: 700; color: #8e7d6a;' },
             list: {
-                container: 'padding-left: 24px; margin-bottom: 1em; color: #333; font-family: "Songti SC", serif;',
-                item: 'margin-bottom: 0.5em; line-height: 1.8;'
+                container: 'padding-left: 24px; margin-bottom: 1em; color: #5a504a;',
+                item: 'margin-bottom: 0.6em; line-height: 1.75;'
             },
             code: {
-                block: 'background: #fff; padding: 1em; border: 1px solid #000; border-radius: 0; font-family: "SF Mono", monospace; color: #000; margin: 1em 0; box-shadow: 4px 4px 0 rgba(0,0,0,0.1);',
-                inline: 'background: #eee; padding: 2px 6px; border-radius: 0; color: #000; border: 1px solid #ccc;'
+                block: 'background: #f0ebe1; padding: 1em; border-radius: 12px; color: #6a605a; margin: 1em 0;',
+                inline: 'background: #f0ebe1; padding: 2px 6px; border-radius: 4px; color: #8e7d6a;'
             },
-            quote: 'border-left: 4px solid #000; background: #fff; padding: 16px; margin: 1.5em 0; font-family: "Songti SC", serif; color: #000; border: 1px solid #000;',
-            image: 'max-width: 100%; border-radius: 0; margin: 1em auto; display: block; border: none; padding: 0; background: transparent;',
+            quote: 'border-left: 3px solid #d2c5b3; padding-left: 16px; margin: 1em 0; color: #7a706a; font-style: italic;',
+            image: 'max-width: 100%; border-radius: 16px; margin: 2px auto 0 auto; display: block; box-shadow: 0 10px 30px rgba(110,95,80,0.08);',
+            callouts: {
+                'NOTE': { bg: '#f5f0e6', border: '#d2c5b3', color: '#8e7d6a' },
+                'TIP': { bg: '#f0f5e6', border: '#c5d2b3', color: '#7d8e6a' },
+                'IMPORTANT': { bg: '#f5e6eb', border: '#d2b3c5', color: '#8e6a7d' },
+                'WARNING': { bg: '#fdf4e4', border: '#e8d0a9', color: '#d4a373' },
+                'CAUTION': { bg: '#fdeae4', border: '#e8a9a9', color: '#d47373' },
+                'INFO': { bg: '#e4f4fd', border: '#a9d0e8', color: '#73a3d4' }
+            }
+        }
+    },
+    brutalist: {
+        id: 'brutalist',
+        name: '极简粗野',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #000000; padding: 20px 12px; color: #ffffff;',
+            footer: {
+                container: 'display: none;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 24px 0; font-size: 2.2em; line-height: 1.1; text-transform: uppercase;', content: 'font-weight: 900; color: #ffffff; letter-spacing: -0.02em;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.6em; line-height: 1.2;', content: 'font-weight: 800; color: #ffff00; text-transform: uppercase;' },
+                h3: { base: 'margin: 24px 0 12px; font-size: 1.3em; line-height: 1.3;', content: 'font-weight: 700; color: #ffffff;' }
+            },
+            paragraph: 'line-height: 1.5; margin-bottom: 0.8em; color: #ffffff; font-size: 1.1em; font-weight: 500;',
+            emphasis: { strong: 'font-weight: 900; color: #000000; background: #ffff00; padding: 0 4px;' },
+            list: {
+                container: 'padding-left: 20px; margin-bottom: 1em; color: #ffffff; list-style-type: square;',
+                item: 'margin-bottom: 0.5em; line-height: 1.5; font-weight: 500;'
+            },
+            code: {
+                block: 'background: #222222; padding: 1.2em; border: 2px solid #ffffff; border-radius: 0; color: #00ff00; margin: 1em 0; font-family: monospace; font-size: 1.1em;',
+                inline: 'background: #ffffff; padding: 2px 6px; border-radius: 0; color: #000000; font-family: monospace; font-weight: bold;'
+            },
+            quote: 'border: 2px solid #ffffff; background: #ffff00; padding: 16px; margin: 1.5em 0; color: #000000; font-weight: 700; font-size: 1.2em;',
+            image: 'max-width: 100%; border-radius: 0; margin: 1em auto; display: block; border: 2px solid #ffffff; filter: grayscale(20%) contrast(120%);',
+            callouts: {
+                'NOTE': { bg: '#222222', border: '#ffffff', color: '#ffffff' },
+                'TIP': { bg: '#ffff00', border: '#ffffff', color: '#000000' },
+                'IMPORTANT': { bg: '#ff00ff', border: '#ffffff', color: '#ffffff' },
+                'WARNING': { bg: '#00ffff', border: '#ffffff', color: '#000000' },
+                'CAUTION': { bg: '#ff0000', border: '#ffffff', color: '#ffffff' },
+                'INFO': { bg: '#0000ff', border: '#ffffff', color: '#ffffff' }
+            }
+        }
+    },
+    vintage: {
+        id: 'vintage',
+        name: '复古胶片',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #eaddcf; padding: 30px 20px; color: #2b2520; box-shadow: inset 0 0 100px rgba(100,60,30,0.1);',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; font-size: 14px; color: #8c7d6b; text-align: center; font-family: "Times New Roman", Times, serif; font-style: italic; letter-spacing: 0.1em;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 24px 0; font-size: 1.8em; line-height: 1.3; text-align: center;', content: 'font-family: inherit; font-weight: 700; color: #7f2b2b; letter-spacing: 0.05em;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.5em; line-height: 1.4;', content: 'font-weight: 700; color: #234236;' },
+                h3: { base: 'margin: 24px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-weight: 600; color: #6b4d32;' }
+            },
+            paragraph: 'line-height: 1.9; margin-bottom: 0.8em; color: #3a322c; text-indent: 1em;',
+            emphasis: { strong: 'font-weight: 700; color: #7f2b2b;' },
+            list: {
+                container: 'padding-left: 24px; margin-bottom: 1em; color: #3a322c;',
+                item: 'margin-bottom: 0.6em; line-height: 1.8;'
+            },
+            code: {
+                block: 'background: rgba(43,37,32,0.05); padding: 1.2em; border: 1px dashed #a89a8c; border-radius: 4px; color: #5c4d3c; margin: 1em 0; font-family: "Courier New", Courier, monospace;',
+                inline: 'background: rgba(43,37,32,0.08); padding: 2px 6px; border-radius: 2px; color: #7f2b2b; font-family: "Courier New", monospace;'
+            },
+            quote: 'border-left: 0; border-top: 2px solid #8c7d6b; border-bottom: 2px solid #8c7d6b; padding: 16px 0; margin: 1.5em 0; color: #5c4d3c; font-style: italic; text-align: center; font-size: 1.1em;',
+            image: 'max-width: 100%; border-radius: 2px; margin: 1.5em auto; display: block; border: 8px solid #f7f3ec; box-shadow: 2px 2px 10px rgba(0,0,0,0.15); filter: sepia(0.2) contrast(1.1);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255,255,255,0.4)', border: '#8c7d6b', color: '#5c4d3c' },
+                'TIP': { bg: 'rgba(35,66,54,0.1)', border: '#234236', color: '#234236' },
+                'IMPORTANT': { bg: 'rgba(127,43,43,0.1)', border: '#7f2b2b', color: '#7f2b2b' },
+                'WARNING': { bg: 'rgba(200,140,50,0.1)', border: '#c88c32', color: '#96641e' },
+                'CAUTION': { bg: 'rgba(127,43,43,0.15)', border: '#7f2b2b', color: '#7f2b2b' },
+                'INFO': { bg: 'rgba(50,80,120,0.1)', border: '#325078', color: '#325078' }
+            }
+        }
+    },
+    wabisabi: {
+        id: 'wabisabi',
+        name: '侘寂素雅',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #d1cbbd; padding: 24px 16px; color: #4a443b; font-weight: 300;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 12px; color: #7a7366; text-align: center; letter-spacing: 0.1em;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 20px 0; font-size: 1.5em; line-height: 1.5; text-align: center;', content: 'font-weight: 500; color: #2d2a24; letter-spacing: 0.05em;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.3em; line-height: 1.5;', content: 'font-weight: 500; color: #3d3830;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.1em; line-height: 1.6;', content: 'font-weight: 500; color: #4a443b;' }
+            },
+            paragraph: 'line-height: 2; margin-bottom: 0.8em; color: #4a443b;',
+            emphasis: { strong: 'font-weight: 500; color: #1a1815; background: rgba(0,0,0,0.05); padding: 0 4px;' },
+            list: {
+                container: 'padding-left: 24px; margin-bottom: 1em; color: #4a443b;',
+                item: 'margin-bottom: 0.8em; line-height: 1.8;'
+            },
+            code: {
+                block: 'background: rgba(255,255,255,0.3); padding: 1.2em; border-radius: 2px; color: #4a443b; margin: 1.2em 0;',
+                inline: 'background: rgba(255,255,255,0.4); padding: 2px 6px; border-radius: 2px; color: #2d2a24;'
+            },
+            quote: 'border-left: 2px solid #8f8574; padding-left: 16px; margin: 1.5em 0; color: #7a7366; font-style: italic;',
+            image: 'max-width: 100%; border-radius: 4px; margin: 1em auto; display: block; filter: sepia(0.1) brightness(0.95);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' },
+                'TIP': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' },
+                'IMPORTANT': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' },
+                'WARNING': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' },
+                'CAUTION': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' },
+                'INFO': { bg: 'rgba(255,255,255,0.2)', border: '#8f8574', color: '#4a443b' }
+            }
+        }
+    },
+    y2k: {
+        id: 'y2k',
+        name: 'Y2K千禧',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background: linear-gradient(135deg, #ff00cc 0%, #333399 100%); padding: 20px 12px; color: #ffffff;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 13px; color: #ff99ff; text-align: center; text-shadow: 1px 1px 2px #000;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 20px 0; font-size: 1.8em; line-height: 1.2; text-align: center; transform: skewX(-5deg);', content: 'font-weight: 900; color: #ffffff; text-shadow: 2px 2px 0px #ff00cc, 4px 4px 0px #333399;' },
+                h2: { base: 'margin: 0 0 14px 0; font-size: 1.5em; line-height: 1.3;', content: 'font-weight: 800; color: #00ffff; text-shadow: 1px 1px 0px #000;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-weight: 700; color: #ff99ff;' }
+            },
+            paragraph: 'line-height: 1.6; margin-bottom: 0.6em; color: #ffffff; font-weight: 500; text-shadow: 0px 1px 2px rgba(0,0,0,0.5);',
+            emphasis: { strong: 'font-weight: 800; color: #ffff00; text-shadow: 1px 1px 0px #ff00cc;' },
+            list: {
+                container: 'padding-left: 24px; margin-bottom: 1em; color: #ffffff; text-shadow: 0px 1px 2px rgba(0,0,0,0.5);',
+                item: 'margin-bottom: 0.5em; line-height: 1.6;'
+            },
+            code: {
+                block: 'background: rgba(0,0,0,0.6); border: 2px solid #00ffff; box-shadow: 2px 2px 0px #ff00cc; padding: 1em; border-radius: 8px; color: #00ffff; margin: 1em 0;',
+                inline: 'background: #ffff00; padding: 2px 6px; border-radius: 4px; color: #000000; font-weight: bold;'
+            },
+            quote: 'border-left: 4px solid #00ffff; background: rgba(255,255,255,0.1); padding: 12px 16px; margin: 1em 0; color: #ffffff; font-style: italic;',
+            image: 'max-width: 100%; border-radius: 12px; margin: 1em auto; display: block; border: 3px solid #00ffff; box-shadow: 4px 4px 0px #ff00cc;',
+            callouts: {
+                'NOTE': { bg: 'rgba(0,0,0,0.5)', border: '#00ffff', color: '#00ffff' },
+                'TIP': { bg: 'rgba(0,0,0,0.5)', border: '#ffff00', color: '#ffff00' },
+                'IMPORTANT': { bg: 'rgba(0,0,0,0.5)', border: '#ff00cc', color: '#ff99ff' },
+                'WARNING': { bg: 'rgba(0,0,0,0.5)', border: '#ff6600', color: '#ff9900' },
+                'CAUTION': { bg: 'rgba(0,0,0,0.5)', border: '#ff0000', color: '#ff0000' },
+                'INFO': { bg: 'rgba(0,0,0,0.5)', border: '#333399', color: '#9999ff' }
+            }
+        }
+    },
+    editorial: {
+        id: 'editorial',
+        name: '杂志大片',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #ffffff; padding: 30px 20px; color: #000000;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; font-size: 11px; color: #000000; text-align: center; text-transform: uppercase; letter-spacing: 0.2em; border-top: 1px solid #000;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 24px 0; font-size: 2.2em; line-height: 1.1; text-align: center;', content: 'font-weight: 900; color: #000000; font-family: "Times New Roman", Times, serif;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.5em; line-height: 1.3;', content: 'font-weight: 800; color: #000000; font-family: "Times New Roman", Times, serif;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-weight: 700; color: #000000;' }
+            },
+            paragraph: 'line-height: 1.7; margin-bottom: 0.8em; color: #111111; font-weight: 400;',
+            emphasis: { strong: 'font-weight: 700; color: #000000; border-bottom: 2px solid #000;' },
+            list: {
+                container: 'padding-left: 20px; margin-bottom: 1em; color: #111111; list-style-type: disc;',
+                item: 'margin-bottom: 0.5em; line-height: 1.6;'
+            },
+            code: {
+                block: 'background: #f4f4f4; padding: 1.2em; border: 1px solid #e0e0e0; color: #333333; margin: 1em 0; font-family: monospace; font-size: 13px;',
+                inline: 'background: #000000; padding: 2px 6px; color: #ffffff; font-family: monospace; font-size: 12px;'
+            },
+            quote: 'border-left: 4px solid #000000; padding: 0 0 0 20px; margin: 1.5em 0; color: #000000; font-style: italic; font-size: 1.3em; font-family: "Times New Roman", Times, serif;',
+            image: 'max-width: 100%; margin: 1.5em auto; display: block; filter: grayscale(10%);',
             callouts: {
                 'NOTE': { bg: '#ffffff', border: '#000000', color: '#000000' },
                 'TIP': { bg: '#ffffff', border: '#000000', color: '#000000' },
-                'IMPORTANT': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'IMPORTANT': { bg: '#000000', border: '#000000', color: '#ffffff' },
                 'WARNING': { bg: '#ffffff', border: '#000000', color: '#000000' },
-                'CAUTION': { bg: '#ffffff', border: '#000000', color: '#000000' },
+                'CAUTION': { bg: '#000000', border: '#000000', color: '#ffffff' },
                 'INFO': { bg: '#ffffff', border: '#000000', color: '#000000' }
             }
         }
+    },
+    journal: {
+        id: 'journal',
+        name: '手账日记',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #fdfcf8; background-image: radial-gradient(#d3cabd 1px, transparent 1px); background-size: 20px 20px; padding: 24px 16px; color: #2a3441;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 13px; color: #a4adc1; text-align: right; font-family: cursive;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 20px 0; font-size: 1.8em; line-height: 1.4; text-align: center;', content: 'font-weight: 700; color: #2a3441; border-bottom: 2px dashed #d3cabd; padding-bottom: 8px; display: inline-block;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 700; color: #d96c75; background: rgba(217,108,117,0.1); padding: 0 8px; border-radius: 4px;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 700; color: #528c9e;' }
+            },
+            paragraph: 'line-height: 2; margin-bottom: 0.8em; color: #2a3441; font-family: inherit;',
+            emphasis: { strong: 'font-weight: 700; color: #e5a93d; text-decoration: underline wavy #e5a93d;' },
+            list: {
+                container: 'padding-left: 24px; margin-bottom: 1em; color: #2a3441;',
+                item: 'margin-bottom: 0.6em; line-height: 1.8; list-style-type: "♡ ";'
+            },
+            code: {
+                block: 'background: #f4f1ea; padding: 1em; border-radius: 8px; border: 1px dashed #d3cabd; color: #528c9e; margin: 1em 0;',
+                inline: 'background: #f4f1ea; padding: 2px 8px; border-radius: 12px; color: #d96c75;'
+            },
+            quote: 'border-left: 4px solid #e5a93d; background: #fffdf5; padding: 12px 16px; margin: 1.5em 0; color: #857a66; border-radius: 0 8px 8px 0;',
+            image: 'max-width: 100%; border-radius: 4px; margin: 1.5em auto; display: block; border: 10px solid #ffffff; box-shadow: 2px 4px 12px rgba(0,0,0,0.08); transform: rotate(-1deg);',
+            callouts: {
+                'NOTE': { bg: '#fdfcf8', border: '#a4adc1', color: '#2a3441' },
+                'TIP': { bg: '#fdfcf8', border: '#528c9e', color: '#528c9e' },
+                'IMPORTANT': { bg: '#fdfcf8', border: '#d96c75', color: '#d96c75' },
+                'WARNING': { bg: '#fdfcf8', border: '#e5a93d', color: '#e5a93d' },
+                'CAUTION': { bg: '#fdfcf8', border: '#c35b5b', color: '#c35b5b' },
+                'INFO': { bg: '#fdfcf8', border: '#6c96c4', color: '#6c96c4' }
+            }
+        }
+    },
+    glass: {
+        id: 'glass',
+        name: '弥散毛玻璃',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background: radial-gradient(circle at 10% 20%, rgb(255, 230, 230) 0%, rgb(230, 255, 255) 50%, rgb(230, 230, 255) 100%); padding: 30px 20px; color: #333333;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 12px; color: rgba(0,0,0,0.4); text-align: center;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 24px 0; font-size: 1.8em; line-height: 1.3; text-align: center;', content: 'font-weight: 800; color: #222222;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.4em; line-height: 1.4;', content: 'font-weight: 700; color: #333333;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.4;', content: 'font-weight: 600; color: #444444;' }
+            },
+            paragraph: 'line-height: 1.8; margin-bottom: 0.8em; color: #444444; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 4px 15px rgba(0,0,0,0.03);',
+            emphasis: { strong: 'font-weight: 700; color: #ff6b6b;' },
+            list: {
+                container: 'padding-left: 20px; margin-bottom: 1em; color: #444444; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 16px 16px 16px 36px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.8);',
+                item: 'margin-bottom: 0.6em; line-height: 1.6;'
+            },
+            code: {
+                block: 'background: rgba(255,255,255,0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 1.2em; border-radius: 12px; border: 1px solid rgba(255,255,255,0.9); color: #555555; margin: 1em 0;',
+                inline: 'background: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 6px; color: #ff6b6b; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.02);'
+            },
+            quote: 'border-left: 4px solid #a8c0ff; background: rgba(255,255,255,0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 16px; margin: 1.5em 0; color: #555555; border-radius: 0 12px 12px 0;',
+            image: 'max-width: 100%; border-radius: 16px; margin: 1em auto; display: block; border: 4px solid rgba(255,255,255,0.5); box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#666666' },
+                'TIP': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#4CAF50' },
+                'IMPORTANT': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#9C27B0' },
+                'WARNING': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#FF9800' },
+                'CAUTION': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#F44336' },
+                'INFO': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#2196F3' }
+            }
+        }
     }
+
 }
 
 /**
