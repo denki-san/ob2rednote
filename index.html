@@ -9,9 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alibaba+PuHuiTi:wght@400;700&family=Liu+Jian+Mao+Cao&family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;900&family=Smiley+Sans:wght@400&family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Alibaba+PuHuiTi:wght@400;700&family=Liu+Jian+Mao+Cao&family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;900&family=Smiley+Sans:wght@400&family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&family=Shippori+Mincho:wght@400;500;600;700;800&family=Hina+Mincho&display=swap"
         rel="stylesheet">
-    <!-- 引入霞鹜文楷 CDN -->
+    <!-- 引入霞鹜文楷与霞鹜新致宋 CDN -->
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-neo-zhisong-webfont/style.css" media="print"
+        onload="this.media='all'">
     <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print"
         onload="this.media='all'">
     <link rel="stylesheet" href="/src/styles.css">
@@ -81,6 +85,9 @@
                         <option value="editorial">杂志大片</option>
                         <option value="journal">手账日记</option>
                         <option value="glass">毛玻璃</option>
+                        <option value="retroLetter">旧时信笺 (配 新致宋)</option>
+                        <option value="premiumBlack">黑胶典雅 (配 Shippori)</option>
+                        <option value="artGallery">艺术中心 (配 思源宋体)</option>
                     </select>
                 </div>
 
@@ -109,6 +116,9 @@
                     <select id="fontFamilySelect" class="form-select">
                         <option value="system">系统默认</option>
                         <option value="noto-serif" selected>思源宋体</option>
+                        <option value="zhisong">霞鹜新致宋</option>
+                        <option value="shippori">Shippori 明朝</option>
+                        <option value="hina">雏明朝 (Hina)</option>
                         <option value="noto-sans">思源黑体</option>
                         <option value="lxgw">霞鹜文楷</option>
                         <option value="smiley">得意黑</option>

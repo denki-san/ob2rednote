@@ -610,20 +610,25 @@ body {
 .red-content-section table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1em 0;
-    font-size: 14px;
+    margin: 1.5em 0;
+    font-size: 0.95em;
 }
 
 .red-content-section th,
 .red-content-section td {
-    padding: 10px;
-    border: 1px solid #333;
+    padding: 12px 14px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
     text-align: left;
+    color: inherit;
 }
 
 .red-content-section th {
-    background: #2c2c2e;
-    font-weight: 600;
+    background: rgba(128, 128, 128, 0.15);
+    font-weight: bold;
+}
+
+.red-content-section td {
+    background: rgba(128, 128, 128, 0.02);
 }
 
 /* 代码块装饰点 */

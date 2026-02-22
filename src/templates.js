@@ -482,8 +482,112 @@ const templates = {
                 'INFO': { bg: 'rgba(255,255,255,0.5)', border: 'rgba(255,255,255,0.8)', color: '#2196F3' }
             }
         }
+    },
+    retroLetter: {
+        id: 'retroLetter',
+        name: '旧时信笺',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #f4efdf; background-image: radial-gradient(#d6cbb1 1px, transparent 1px); background-size: 30px 30px; padding: 36px 24px; color: #3a2e26; font-weight: 400;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; font-size: 13px; color: #8a7a6e; text-align: center; font-style: italic; letter-spacing: 0.1em; border-top: 1px dashed rgba(138, 122, 110, 0.3);'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 24px 0; font-size: 1.6em; line-height: 1.4; text-align: center;', content: 'font-weight: 700; color: #5c3029; letter-spacing: 0.05em;' },
+                h2: { base: 'margin: 0 0 16px 0; font-size: 1.4em; line-height: 1.5; text-align: center;', content: 'font-weight: 500; color: #6a4a40;' },
+                h3: { base: 'margin: 20px 0 12px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 500; color: #7a5e54;' }
+            },
+            paragraph: 'line-height: 2.1; margin-bottom: 0.8em; color: #3a2e26; text-indent: 1.5em;',
+            emphasis: { strong: 'font-weight: 700; color: #5c3029; background: rgba(92, 48, 41, 0.08); padding: 0 4px;' },
+            list: {
+                container: 'padding-left: 28px; margin-bottom: 1em; color: #3a2e26;',
+                item: 'margin-bottom: 0.8em; line-height: 1.9;'
+            },
+            code: {
+                block: 'background: rgba(214, 203, 177, 0.3); padding: 1.2em; border: 1px solid rgba(138, 122, 110, 0.2); border-left: 4px solid #8a7a6e; border-radius: 2px; color: #50443d; margin: 1em 0;',
+                inline: 'background: rgba(214, 203, 177, 0.4); padding: 2px 6px; border-radius: 2px; color: #5c3029;'
+            },
+            quote: 'border-left: 2px solid #5c3029; padding: 0 0 0 20px; margin: 1.8em 0; color: #50443d; font-style: italic; font-size: 1.1em;',
+            image: 'max-width: 100%; border-radius: 2px; margin: 1.5em auto; display: block; filter: sepia(0.35) contrast(1.1) brightness(0.9); box-shadow: 2px 4px 15px rgba(58, 46, 38, 0.15); border: 8px solid #fdfbf7;',
+            callouts: {
+                'NOTE': { bg: 'rgba(255, 255, 255, 0.4)', border: '#8a7a6e', color: '#3a2e26' },
+                'TIP': { bg: 'rgba(92, 48, 41, 0.05)', border: '#5c3029', color: '#5c3029' },
+                'IMPORTANT': { bg: 'rgba(106, 74, 64, 0.1)', border: '#6a4a40', color: '#6a4a40' },
+                'WARNING': { bg: 'rgba(200, 150, 80, 0.1)', border: '#c89650', color: '#8c6020' },
+                'CAUTION': { bg: 'rgba(160, 60, 60, 0.1)', border: '#a03c3c', color: '#a03c3c' },
+                'INFO': { bg: 'rgba(100, 130, 160, 0.1)', border: '#6482a0', color: '#406080' }
+            }
+        }
+    },
+    premiumBlack: {
+        id: 'premiumBlack',
+        name: '黑胶典雅',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #111111; padding: 40px 24px; color: #e8e8e8; font-weight: 300;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; font-size: 12px; color: #888888; text-align: center; letter-spacing: 0.15em; text-transform: uppercase;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 32px 0; font-size: 1.8em; line-height: 1.3; text-align: center;', content: 'font-weight: 600; color: #d4af37; letter-spacing: 0.1em;' },
+                h2: { base: 'margin: 0 0 20px 0; font-size: 1.4em; line-height: 1.4; text-align: center;', content: 'font-weight: 500; color: #e8e8e8; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; display: inline-block;' },
+                h3: { base: 'margin: 24px 0 16px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 400; color: #c0c0c0;' }
+            },
+            paragraph: 'line-height: 2.2; margin-bottom: 1.2em; color: #b8b8b8; font-weight: 300; text-align: justify;',
+            emphasis: { strong: 'font-weight: 500; color: #d4af37;' },
+            list: {
+                container: 'padding-left: 20px; margin-bottom: 1.2em; color: #b8b8b8; list-style-type: none;',
+                item: 'margin-bottom: 0.8em; line-height: 2; position: relative;'
+            },
+            code: {
+                block: 'background: rgba(255, 255, 255, 0.03); padding: 1.4em; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 4px; color: #a0a0a0; margin: 1.5em 0; font-family: monospace;',
+                inline: 'background: rgba(212, 175, 55, 0.1); padding: 2px 6px; border-radius: 2px; color: #d4af37;'
+            },
+            quote: 'border-left: 0; border-top: 1px solid #d4af37; border-bottom: 1px solid #d4af37; padding: 20px 10px; margin: 2em 0; color: #c0c0c0; font-style: italic; text-align: center; font-size: 1.1em;',
+            image: 'max-width: 100%; border-radius: 0; margin: 2em auto; display: block; filter: grayscale(40%) contrast(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.8);',
+            callouts: {
+                'NOTE': { bg: 'rgba(255, 255, 255, 0.05)', border: '#555555', color: '#b8b8b8' },
+                'TIP': { bg: 'rgba(212, 175, 55, 0.08)', border: '#d4af37', color: '#d4af37' },
+                'IMPORTANT': { bg: 'rgba(212, 175, 55, 0.15)', border: '#d4af37', color: '#f0e6d2' },
+                'WARNING': { bg: 'rgba(255, 100, 50, 0.1)', border: '#ff6432', color: '#ff8a50' },
+                'CAUTION': { bg: 'rgba(200, 50, 50, 0.1)', border: '#c83232', color: '#e66464' },
+                'INFO': { bg: 'rgba(50, 100, 200, 0.1)', border: '#3264c8', color: '#64a0ff' }
+            }
+        }
+    },
+    artGallery: {
+        id: 'artGallery',
+        name: '艺术中心',
+        styles: {
+            imagePreview: 'width: 100%; height: 100%; background-color: #f0f0f2; padding: 32px 20px; color: #2c2c2e; font-weight: 400;',
+            footer: {
+                container: 'position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; font-size: 11px; color: #8e8e93; text-align: left; padding-left: 24px; letter-spacing: 0.1em; border-top: 1px solid #d1d1d6;'
+            },
+            title: {
+                h1: { base: 'margin: 0 0 28px 0; font-size: 2em; line-height: 1.2;', content: 'font-weight: 700; color: #1c1c1e;' },
+                h2: { base: 'margin: 0 0 20px 0; font-size: 1.4em; line-height: 1.5;', content: 'font-weight: 600; color: #3a3a3c;' },
+                h3: { base: 'margin: 24px 0 16px; font-size: 1.2em; line-height: 1.5;', content: 'font-weight: 500; color: #48484a;' }
+            },
+            paragraph: 'line-height: 2; margin-bottom: 1.2em; color: #3a3a3c; font-weight: 400;',
+            emphasis: { strong: 'font-weight: 600; color: #1c1c1e; border-bottom: 1px solid #1c1c1e; padding-bottom: 2px;' },
+            list: {
+                container: 'padding-left: 24px; margin-bottom: 1.2em; color: #3a3a3c;',
+                item: 'margin-bottom: 0.8em; line-height: 1.8;'
+            },
+            code: {
+                block: 'background: #e5e5ea; padding: 1.2em; border-radius: 6px; color: #48484a; margin: 1.5em 0; font-family: monospace;',
+                inline: 'background: #d1d1d6; padding: 2px 6px; border-radius: 4px; color: #1c1c1e; font-size: 0.9em;'
+            },
+            quote: 'border-left: 3px solid #8e8e93; padding: 0 0 0 16px; margin: 1.5em 0; color: #636366; font-style: normal; font-size: 1.05em;',
+            image: 'max-width: 100%; border-radius: 0; margin: 2em auto; display: block; filter: contrast(1.05) saturate(0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.05);',
+            callouts: {
+                'NOTE': { bg: '#ffffff', border: '#d1d1d6', color: '#1c1c1e' },
+                'TIP': { bg: '#f2f2f7', border: '#34c759', color: '#248a3d' },
+                'IMPORTANT': { bg: '#e5e5ea', border: '#1c1c1e', color: '#1c1c1e' },
+                'WARNING': { bg: '#fef0e1', border: '#ff9500', color: '#b26800' },
+                'CAUTION': { bg: '#fceaea', border: '#ff3b30', color: '#bd2420' },
+                'INFO': { bg: '#e9f0fe', border: '#007aff', color: '#0054b3' }
+            }
+        }
     }
-
 }
 
 /**
